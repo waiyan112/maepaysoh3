@@ -1,0 +1,90 @@
+html,body,div[data-role ="page"], div[data-role="content"], div[data-role="panel"] {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  background: #e5e5e5;
+}
+
+.ui-listview > li > a.ui-btn {
+	background:#2d3e50;
+	color:white;
+	border:0px;
+}
+
+.ui-listview > li {
+	padding-bottom:10px;
+}
+
+#candidateLists.ui-listview > li > a.ui-btn {
+	background:#2d3e50;
+	color:white;
+	border:0px;
+}
+
+
+#setting{
+  position: relative;
+  top: -70px;
+  margin-left: 10px;
+}
+
+.ui-grid-a{
+  margin-top:-50px;
+  
+}
+
+#time{
+  color: #fff;
+  position: relative;
+  background: #c79735;
+}
+
+.ui-bar{
+
+  border: 0px;
+  padding: 5px;
+}
+
+#left{
+  padding-left: 15px;
+}
+
+#right{
+  padding-right: 15px;
+}
+
+.ui-bar a{
+
+  padding: 20px 0px;
+}
+
+.ui-btn{
+  border: 0px;
+}
+
+#large-btn{
+  height:100%;
+}
+
+.center-wrapper{
+  text-align: center;
+}
+.center-wrapper * {
+  margin: 0 auto;
+}
+
+.center-button{
+  margin: 0 auto;
+  position: relative;
+  color: #fff;
+  text-decoration: underline;
+  top:60px;
+  font-size: 50px;
+  text-shadow: none;
+}
+
+#party{
+  color: #fff;
+  text-shadow: none;
+}

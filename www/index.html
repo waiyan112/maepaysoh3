@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Include meta tag to ensure proper rendering and touch zooming -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>my voter app test</title>
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<style type="text/css">
+		@font-face {
+    font-family: zawgyi-One;
+    src: url(fonts/zawgyi.ttf) format('ttf'),url('fonts/zawgyi.woff') format('woff'),local('Zawgyi-One');
+}
+	ul#partylistdata a,ul#candidateLists a,*,body{
+		font-family: zawgyi1,"zawgyi-One" !important;
+	}
+.hello{
+color:red;
+}
+	.loadingImage{
+	  padding:50px;
+	  text-align:center;
+	  display:none;
+	}
+	</style>
+</head>
+<body >
+
+<!------------ HOme Page ---------------->
+<div data-role="page" id="home">
+<div data-role="content" id="content">
+           <div class="center-wrapper">
+             <div class="center-button" >
+               00:00<br>
+               <span style="font-size:15px;position:relative;top:-40px;">မဲေပးရန္က်န္ခ်ိန္</span>
+             </div>
+
+           </div>
+             <div>
+                 <img src="img/header.jpg" alt="image" style=" width: 100%;  height:100% ; padding:0px; margin:-130px 0px 0px 0px;"/>
+             </div>
+
+             <a href="#myPanelDefault"> &nbsp;<br>&nbsp;<bR>&nbsp;</a>
+             <div class="ui-grid-a">
+    <div class="ui-block-a" id="left"><div class="ui-bar ui-bar-a">
+
+      <a href="#party"  class="ui-btn partylists" style="background: #2d3e50;color:#fff;">
+      <img src="img/logo.png" width="10%" class="ui-li-icon" />&nbsp;ပါတီမ်ား</a>
+      <a href="#candidate" class="ui-btn candidateLists" style="background: #2d3e50;color:#fff;"><img src="img/logo.png" width="10%"/>&nbsp;ကိုယ္စားလွယ္မ်ား</a>
+
+      <a href="#findelection" class="ui-btn" style="background: #2d3e50;color:#fff;"><img src="img/logo.png" width="10%"/>&nbsp;မဲေပးရန္ရွာပါ</a>
+      <a href="#knowledge" class="ui-btn" style="background: #2d3e50;color:#fff; font-size:11px;padding:10px 0px 10px 0px;" ><img src="img/logo.png" width="10%"/>&nbsp;ေရြးေကာက္ပြဲဆိုင္ရာ<br>ဗဟုသုတမ်ား</a>
+    </div></div>
+    <div class="ui-block-b" id="right"><div class="ui-bar ui-bar-a"><a href="#news" class="ui-btn" id="large-btn" style="background: #2d3e50; color:#fff;padding-top:102px;padding-bottom:103px;"><p><img src="img/logo.png" width="10%"/>&nbsp;သတင္းမ်ား</p></a></div></div>
+</div><!-- /grid-a -->
+         </div>
+         <div data-role="panel" data-position-fixed="true"  id="myPanelDefault" style="background:#2d3e50;">
+       <ul data-role="listview" >
+           <li><a style="  background:#c79735; border: 0px; color: #fff; text-shadow: none; text-align:center;">Menu</a></li><br>
+           <li><a href="#panel-fixed-page2" style="  background:#c79735;  color: #fff; text-shadow: none;">Accessibility</a></li>
+           <li><a href="#panel-fixed-page2" style="  background:#c79735;  color: #fff; text-shadow: none;">Accordions</a></li>
+           <li><a href="#panel-fixed-page2" style="  background:#c79735;  color: #fff; text-shadow: none;" >AJAX navigation model</a></li>
+           <li><a href="#panel-fixed-page2" style="  background:#c79735;  color: #fff; text-shadow: none;">Anatomy of a page</a></li>
+           <li><a href="#panel-fixed-page2" style="  background:#c79735;  color: #fff; text-shadow: none;">Animation events</a></li>
+       </ul>
+   </div><!-- /panel -->
+</div>
+
+<!------------End HOme Page ---------------->
+
+<!--------- party Start ------------>
+
+<div data-role="page" id="party">
+
+  <div data-role="header" style="background:#2d3e50;  color: #fff; border:0px;text-shadow: none;">
+    <a href="#home" data-icon="home" style="background:#2d3e50;  color: #fff; border:0px;text-shadow: none;">Home</a>
+
+    <h1>ပါတီမ်ား</h1>
+
+	<a href="#home" data-icon="back" style="background:#2d3e50;  color: #fff; border:0px;text-shadow: none;">Back</a>
+  </div><br>
+
+  <div data-role="main" class="ui-content" >
+	  <ul data-role="listview" class="partybg" style="padding:0px 10px;" id="partylistdata">
+
+	  </ul>
+	  	  <ul data-role="listview" class="loadingImage">
+	  <img src="img/ajax-loader.gif" />
+	  </ul>
+  </div>
+
+</div>
+
+<!--------- party End ------------>
+<!--------- party Start ------------>
+
+
+<div data-role="page" id="candidate">
+
+  <div data-role="header" style="background:#2d3e50;  color: #fff; border:0px;text-shadow: none;">
+  	<a href="#home" data-icon="home" style="background:#2d3e50;  color: #fff; border:0px;text-shadow: none;">Home</a>
+    <h1>ကိုယ္စားလွယ္မ်ား</h1>
+	 <a href="#choosecandidate" data-icon="back" style="background:#2d3e50;  color: #fff; border:0px;text-shadow: none;">Back</a>
+
+  </div><br>
+
+  <div data-role="main" class="ui-content"  >
+	  <ul data-role="listview" style="padding:0px 10px;" id="candidateLists">
+
+	  </ul>
+	  <ul data-role="listview" class="loadingImage">
+	  <img src="img/ajax-loader.gif" />
+	  </ul>
+  </div>
+
+
+</div>
+<!--------- Choose  Candidate  ------------>
+<div data-role="page" id="choosecandidate">
+
+  <div data-role="header" style="background:#2d3e50;  color: #fff; border:0px;text-shadow: none;">
+   <a href="#home" data-icon="home" style="background:#2d3e50;  color: #fff; border:0px;text-shadow: none;">Home</a>
+    <h1>ကိုယ္စားလွယ္မ်ား</h1>
+	 <a href="#home" data-icon="back" style="background:#2d3e50;  color: #fff; border:0px;text-shadow: none;">Back</a>
+  </div><br>
+
+  <div style="padding:0px 10px;">
+<a href="#candidate" class="ui-btn" style="background: #2d3e50;color:#fff;padding:15px 0px;"><img src="img/logo.png" style="float:left;padding-left:10px;"width="15%"/>ျပည္သူ႕လႊတ္ေတာ္<br>ကိုယ္စားလွယ္ေလာင္းမ်ား</a>
+<a href="#" class="ui-btn" style="background: #2d3e50;color:#fff;padding:15px 0px;"><img src="img/logo.png" style="float:left;padding-left:10px;"width="15%"/>အမ်ိဳးသားလႊတ္ေတာ္<br>ကိုယ္စားလွယ္ေလာင္းမ်ား</a>
+<a href="#" class="ui-btn" style="background: #2d3e50;color:#fff;padding:15px 0px;"><img src="img/logo.png" style="float:left;padding-left:10px;"width="15%"/>တိုင္းေဒသႀကီး<br>ကိုယ္စားလွယ္ေလာင္းမ်ား</a>
+    <br>
+<hr></hr>
+<h1 style="text-align:center;">အေသးစိတ္ရွာရန္</h1>
+
+<div style="background:#2d3e50;color:#fff;">
+
+
+<form>
+<div class="ui-field-contain" style="margin:0px 10px;">
+<span style="">သင္ေနထိုင္သည့္တိုင္း/ျပည္နယ္ႏွင့္ရွာပါ</span>
+    <select name="select-native-1" id="select-native-1">
+        <option value="1">ရန္ကုန္</option>
+        <option value="2">မႏၲေလး</option>
+        <option value="3">ေနျပည္ေတာ္</option>
+        <option value="4">ပ်ဥ္မနား</option>
+    </select><br>
+
+    <span style="position:relative;left:-20px;">သင္ေနထုိင္သည့္ျမိဳ႕နယ္ႏွင့္ရွာပါ</span>
+    <select name="select-native-1" id="select-native-1">
+        <option value="1">လမ္းမေတာ္</option>
+        <option value="2">အလံု</option>
+        <option value="3">လသာ</option>
+        <option value="4">ေက်ာက္တံတား</option>
+    </select>
+</div>
+<div style="margin:10px 10px 0px 10px;padding-bottom:10px;">
+	<input type="submit" value="ရွာပါ">
+	</div>
+</form>
+</div><br>
+
+
+    </div>
+</div>
+
+<!----------------- end choose candidate ------------------------->
+
+
+<!--------------------- Start Knowledge ----------------------------------->
+<div data-role="page" id="knowledge">
+
+  <div data-role="header" style="background:#2d3e50;  color: #fff; border:0px;text-shadow: none;">
+    <a href="#home" data-icon="back" style="background:#2d3e50;  color: #fff; border:0px;text-shadow: none;">back</a>
+
+    <h1>ဗဟုသုတမ်ား</h1>
+  </div><br>
+	<div style="padding:5px;background:#2d3e50;color:white;">
+	<p ><img src="img/Party_Logo.jpg" style="float:left;padding-right:10px;"/><span style="font-size:25px;">Header</span><br>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.<a href="#" style="color:white;">Read more..</a>
+	</div>
+	<hr></hr>
+
+
+</div>
+<!--------------------- End Knowledge ----------------------------------->
+
+
+<!--------------------- Start News ----------------------------------->
+<div data-role="page" id="news">
+
+  <div data-role="header" style="background:#2d3e50;  color: #fff; border:0px;text-shadow: none;">
+    <a href="#home" data-icon="back" style="background:#2d3e50;  color: #fff; border:0px;text-shadow: none;">back</a>
+
+    <h1>သတင္းမ်ား</h1>
+  </div><br>
+	<div style="padding:5px;background:#2d3e50;color:white;">
+	<p ><img src="img/Party_Logo.jpg" style="float:left;padding-right:10px;"/><span style="font-size:25px;">Header</span><br>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.<a href="#newsdetail" style="color:white;">Read more..</a>
+	</div>
+	<hr></hr>
+
+
+</div>
+<!--------------------- End News ----------------------------------->
+
+<!--------------------- Start News Detail ----------------------------------->
+<div data-role="page" id="newsdetail">
+
+  <div data-role="header" style="background:#2d3e50;  color: #fff; border:0px;text-shadow: none;">
+    <a href="#home" data-icon="home" style="background:#2d3e50;  color: #fff; border:0px;text-shadow: none;">Home</a>
+
+    <h1>Header</h1>
+	
+	<a href="#news" data-icon="back" style="background:#2d3e50;  color: #fff; border:0px;text-shadow: none;">Back</a>
+  </div><br>
+	    <div>
+        <img src="img/header.jpg" alt="image" style=" width: 91%;  height:100% ; padding:5px 0px 5px 15px;"/>
+    </div>
+    <div style="background:#2d3e50;margin:0px 10px; padding:10px;color:#fff;">
+   <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.<br>
+
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+    </div>
+	<hr></hr>
+
+
+</div>
+<!--------------------- End News Detail----------------------------------->
+
+
+<!-------- Party Detail -------------->
+
+<div data-role="page" id="partydetail">
+
+  <div data-role="header" style="background:#c79735;  color: #fff; border:0px;text-shadow: none;">
+    <a href="#home" data-icon="back" style="background:#c79735;  color: #fff; border:0px;text-shadow: none;">back</a>
+
+    <h1 id="partyName">ကိုယ္စားလွယ္မ်ား</h1>
+  </div><br>
+
+  <div data-role="main" class="ui-content"  >
+	  <div class="ui-grid-solo">
+	  	<div class="ui-block-a">
+	  		<div class="partyImage">
+	  			<img src="img/ajax-loader.gif" id="partyLogoImage"/>
+	  		</div>
+	  		<div class="partyTitle">
+	  		<h2 id="partyTitle"><img src="img/ajax-loader.gif" /></h2>
+	  		</div>
+	  	</div>
+
+	  	<div class="ui-block-a" >
+	  		<ul data-role="listview" style="padding:0px 10px;" data-inset="true" id="partydetailData">
+
+	  		</ul>
+	  	</div>
+	  </div>
+	  <ul data-role="listview" class="loadingImage">
+	  <img src="img/ajax-loader.gif" />
+	  </ul>
+  </div>
+
+
+</div>
+
+<!------- Party End ------------------------>
+
+<!--------- Single Candidate  ------------>
+
+
+<div data-role="page" id="singlecandidatepage">
+
+  <div data-role="header" style="background:#2d3e50;  color: #fff; border:0px;text-shadow: none;">
+    	<a href="#home" data-icon="home" style="background:#2d3e50;  color: #fff; border:0px;text-shadow: none;">Home</a>
+
+    <h1>ကိုယ္စားလွယ္</h1>
+
+		<a href="#candidate" data-icon="back" style="background:#2d3e50;  color: #fff; border:0px;text-shadow: none;">Back</a>
+  </div><br>
+
+  <div data-role="main" class="ui-content"  style="color:#000; border:0px;text-shadow: none;margin-top:-40px;">
+  	<img src="img/ajax-loader.gif" class="loadingImagedetail" />
+	<div style="line-height:25px;background-color:#d4d4d4; height:100%;">
+	<p style="text-align:right;padding-bottom:10px;"><img id="singleCandidatePhotourl" width="40%" src="" style="float:left;padding-right:10px;"/><br>
+	
+				<span id="singleCandidateName" style="font-size:25px;"></span><br>
+				 <span id="singlelegislature" style="font-size:12px;"></span><br>
+				 <span id="singleeducation"style="font-size:12px;"></span><br>
+				 <span id="singleoccupation" style="font-size:12px;"></span><br>
+				 <span id="singleconstituencyName" style="font-size:12px;"></span>
+		  		(<span id="singleconstituencyParent" style="font-size:12px;"></span>)<br><br>
+				
+				</p>
+	</div><br>
+	<div class="ui-grid-solo">
+		<div class="ui-block-a" style="margin-top:10px;">
+		<span style="height:100%;">၀င္ေရာက္ယွဥ္ျပိဳင္သည့္လႊတ္ေတာ္</span><br>
+		 <span id="singlelegislature1" style="font-size:12px;"></span><br>
+		 
+		 <span style="height:100%;">၀င္ေရာက္ယွဥ္ျပိဳင္သည့္ပါတီ</span><br>
+		 <span id="singlePartyParty_Name1" style="font-size:12px;"></span><br>
+		 
+		 <hr></hr>
+		 
+		  <span style="height:100%;">၀င္ေရာက္ယွဥ္ျပိဳင္သည့္ေဒသ</span><br>
+		 <span id="singleconstituencyName1" style="font-size:12px;"></span>
+			  		(<span id="singleconstituencyParent1" style="font-size:12px;"></span>)<br>
+		 </div>
+	 </div>
+	 <hr></hr>
+	 
+	 <span style="height:100%;">ကိုယ္စားလွယ္အခ်က္အလက္</span><br><br>
+	 <label style="color:#919191;">အမည္ : </label><span id="singleCandidateName1" style="font-size:25px;"></span><br>
+	 <label style="color:#919191;">ပညာအရည္အခ်င္း : </label><span id="singleeducation1" style="font-size:25px;"></span><br>
+	 <label style="color:#919191;">အလုပ္အကိုင္ : </label><span id="singleoccupation1" style="font-size:25px;"></span><br>
+	 <label style="color:#919191;">ေနရပ္ : </label><span id="singleward_village"></span><br>
+	 <label style="color:#919191;">အမိအမည္ : </label><span id="singleMotherName"></span> (<span id="singleMotherReligion"></span>)<br>
+	 <label style="color:#919191;">အဖအမည္ : </label><span id="singleFatherName"></span> (<span id="singleFatherReligion"></span>)<br><br>
+	 
+	 <hr></hr>
+	 
+	  <span style="height:100%;">ဆက္သြယ္ရန္</span><br>
+	 <span id="singlepartyContact"></span><br>
+	 
+	 <hr></hr>
+	 <p style="text-align:center;">
+	 ကိုယ္စားလွယ္ေလာင္းအတြက္ Facebookမွ<br>
+	 မဲဆြယ္ရန္<br>
+	 ေအာက္ပါေပးထားေသာ ခလုပ္ကိုႏိုပ္ပါ။<br>
+	  <span style="height:100%;">Facebook Logo</span>
+	  </p>
+	 
+	 <hr></hr>
+	  
+	  
+
+	 
+
+  </div>
+
+
+</div>
+
+
+
+<!--------- Single Candidate End ------------>
+
+<!------ findelection Start ------>
+
+<div data-role="page" id="findelection">
+
+  <div data-role="header" style="background:#2d3e50;  color: #fff; border:0px;text-shadow: none;">
+    <a href="#home" data-icon="back" style="background:#2d3e50;  color: #fff; border:0px;text-shadow: none;">back</a>
+
+    <h1>ကိုယ္စားလွယ္အေသးစိတ္</h1>
+  </div><br>
+
+
+
+    <div style="background:#2d3e50;margin:0px 0px; color:#fff;">
+
+
+<form>
+<div class="ui-field-contain" style="margin:0px 10px;">
+<span style="">သင္ေနထိုင္သည့္တိုင္း/ျပည္နယ္</span>
+    <select name="select-native-1" id="select-native-1">
+        <option value="1">ရန္ကုန္</option>
+        <option value="2">မႏၲေလး</option>
+        <option value="3">ေနျပည္ေတာ္</option>
+        <option value="4">ပ်ဥ္မနား</option>
+    </select><br>
+
+    <span style="position:relative;left:-20px;">သင္ေနထုိင္သည့္ျမိဳ႕နယ္</span>
+    <select name="select-native-1" id="select-native-1">
+        <option value="1">လမ္းမေတာ္</option>
+        <option value="2">အလံု</option>
+        <option value="3">လသာ</option>
+        <option value="4">ေက်ာက္တံတား</option>
+    </select>
+</div>
+<div style="margin:10px 10px 0px 10px;padding-bottom:10px;">
+	<input type="submit" value="ရွာပါ">
+	</div>
+</form>
+
+
+
+    </div>
+
+</div>
+
+<!------ findelection End ------>
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+<script src="cordova.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

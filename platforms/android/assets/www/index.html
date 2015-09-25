@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+
+  <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+        <p>Try to resize the width of your browser window, to see the effect.</p>
+        <p>
+        <a href="#" class="btn btn-success addnewpatient">+Add New Patient </a>
+        </p>
+        </div>
+        <div class="col-md-12">
+             <table class="table table-responsive">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Age</th>
+                  <th>Husband</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Berglunds snabbköp</td>
+                  <td>Christina Berglund</td>
+                  <td>Berguvsvägen 8</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
+
+        <div class="modal fade" id="addnewpatient">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Add New Patient</h4>
+              </div>
+              <div class="modal-body">
+                <p>Name</p>
+                <input type="text" name="name" id="pName" />
+                <p>Age</p>
+                <input type="number" name="age" id="pAge" />
+                <p>husband Name</p>
+                <input type="text" name="husband" id="husbandname" />
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary savep">Save changes</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+  </div>
+   <style>
+th {
+    border-bottom: 1px solid #d6d6d6;
+}
+
+tr:nth-child(even) {
+    background: #e9e9e9;
+}
+</style>
+</div> 
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>
