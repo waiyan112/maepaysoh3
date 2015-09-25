@@ -29,7 +29,7 @@ var db = window.openDatabase("vote", "1.0", "vote", "10000");
 
 
 var url = "http://vote.mmappbuilder.com/admin/index.php";
-
+//var url = "http://localhost/vote/admin/index.php";
 var state = '';
 	var per_page = 10;
 	var page = 1;
